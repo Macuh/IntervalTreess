@@ -71,7 +71,7 @@ int RedBlackTree::checkParentChild(Nodo* nodo){
     else return -1;
 }
 
-Nodo* getSuccessor(Nodo* nodo){
+Nodo* RedBlackTree::getSuccessor(Nodo* nodo){
     Nodo* app = nodo->getRight();
 
     while(!(app->getLeft()->checkNil())){
