@@ -86,7 +86,7 @@ class RedBlackTree{
          * 
          * @param value 
          */
-        void insert(int value);
+        void insert(Nodo* newNodo);
 
         /**
          * @brief Starting by a node fix the tree to respect RBTree properties

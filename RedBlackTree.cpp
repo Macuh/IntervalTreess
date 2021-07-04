@@ -100,15 +100,14 @@ void RedBlackTree::preOrder(Nodo* nodoAttuale){
     if(!(nodoAttuale->getRight()->checkNil())) preOrder(nodoAttuale->getRight());
 }
 
-void RedBlackTree::insert(int value){
-    Nodo* newNodo = new Nodo(value);
+void RedBlackTree::insert(Nodo* newNodo){
     Nodo* nodoAttuale = root;
     Nodo* nodoPrec = root;
 
     while(!(nodoAttuale->checkNil())){
         nodoPrec = nodoAttuale;
 
-        if(value <= nodoAttuale->getValueMin())
+        if(newNodo->getValueMin() <= nodoAttuale->getValueMin())
             nodoAttuale = nodoAttuale->getLeft();
         else
             nodoAttuale = nodoAttuale->getRight();
@@ -120,7 +119,7 @@ void RedBlackTree::insert(int value){
         root = newNodo;
         newNodo->setColor(BLACK);
     }
-    else if(value <= nodoPrec->getValueMin())
+    else if(newNodo->getValueMin() <= nodoPrec->getValueMin())
         nodoPrec->setLeft(newNodo);
     else
         nodoPrec->setRight(newNodo);
