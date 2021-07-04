@@ -5,7 +5,6 @@ class IntervalTree : public RedBlackTree{
         IntervalTree() : RedBlackTree(){
 
         }
-
-        void insert(int minValue, int maxValue);
+        
         Nodo* ricerca(int value);
 };
