@@ -1,134 +1,116 @@
 #include <iostream>
 #include <stdlib.h>
+#include <nodo.h>
 
-#define RED 0
-#define BLACK 1
-#define DOUBLE_BLACK 2
+//Nodo constructor for real RBTree Node
+Nodo::Nodo(int valueMin, int valueMax){
+    this->valueMin = valueMin;
+    this->valueMax = valueMax;
 
-class Nodo{
-    private:
-        int valueMin;
-        int valueMax;
+    right = new Nodo();
+    left = new Nodo();
+    parent = new Nodo();
 
-        Nodo* right;
-        Nodo* left;
-        Nodo* parent;
+    color = RED;
+    nilNode = false;
+}
 
-        int color;
-
-        bool nilNode;
+//Nodo constructor for nilNode
+Nodo::Nodo(){
+    right = this;
+    left = this;
+    parent = this;
     
-    public:
-        //Nodo constructor for real RBTree Node
-        Nodo(int valueMin, int valueMax){
-            this->valueMin = valueMin;
-            this->valueMax = valueMax;
+    color = BLACK;
 
-            right = new Nodo();
-            left = new Nodo();
-            parent = new Nodo();
+    nilNode = true;
+}
 
-            color = RED;
-            nilNode = false;
-        }
+/**
+ * @brief 
+ * 
+ * @param value 
+ * @return true
+ * if value overlap the interval defined by valueMin and valueMax
+ */
+bool Nodo::checkOverlap(int value){
+    if(value >= valueMin && value <= valueMax)
+        return true;
+    else 
+        return false;
+}
 
-        //Nodo constructor for nilNode
-        Nodo(){
-            right = this;
-            left = this;
-            parent = this;
-            
-            color = BLACK;
+/**
+ * @brief 
+ * 
+ * @param x 
+ * @param y
+ * 
+ * Methods that swap x and y values 
+ */
+void Nodo::swapValues(Nodo* x, Nodo* y){
+    int minApp = y->valueMin;
+    int maxApp = y->valueMax;
 
-            nilNode = true;
-        }
+    y->valueMin = x->valueMin;
+    y->valueMax = x->valueMax;
 
-        /**
-         * @brief 
-         * 
-         * @param value 
-         * @return true
-         * if value overlap the interval defined by valueMin and valueMax
-         */
-        bool checkOverlap(int value){
-            if(value >= valueMin && value <= valueMax)
-                return true;
-            else 
-                return false;
-        }
+    x->valueMin = minApp;
+    x->valueMax = maxApp;
+}
 
-        /**
-         * @brief 
-         * 
-         * @param x 
-         * @param y
-         * 
-         * Methods that swap x and y values 
-         */
-        static void swapValues(Nodo* x, Nodo* y){
-            int minApp = y->valueMin;
-            int maxApp = y->valueMax;
+//Getter
 
-            y->valueMin = x->valueMin;
-            y->valueMax = x->valueMax;
+int Nodo::getValueMin(){
+    return valueMin;
+}
 
-            x->valueMin = minApp;
-            x->valueMax = maxApp;
-        }
+int Nodo::getValueMax(){
+    return valueMax;
+}
 
-        //Getter
+Nodo* Nodo::getRight(){
+    return right;
+}
 
-        int getValueMin(){
-            return valueMin;
-        }
+Nodo* Nodo::getLeft(){
+    return left;
+}
 
-        int getValueMax(){
-            return valueMax;
-        }
+Nodo* Nodo::getParent(){
+    return parent;
+}
 
-        Nodo* getRight(){
-            return right;
-        }
+int Nodo::getColor(){
+    return color;
+}
 
-        Nodo* getLeft(){
-            return left;
-        }
+bool Nodo::checkNil(){
+    return nilNode;
+}
 
-        Nodo* getParent(){
-            return parent;
-        }
+//Setter
 
-        int getColor(){
-            return color;
-        }
+void Nodo::setValueMin(int newValue){
+    valueMin = newValue;
+}
 
-        bool checkNil(){
-            return nilNode;
-        }
+void Nodo::setValueMax(int newValue){
+    valueMax = newValue;
+}
 
-        //Setter
+void Nodo::setRight(Nodo* newRight){
+    right = newRight;
+}
 
-        void setValueMin(int newValue){
-            valueMin = newValue;
-        }
+void Nodo::setLeft(Nodo* newLeft){
+    left = newLeft;
+}
 
-        void setValueMax(int newValue){
-            valueMax = newValue;
-        }
+void Nodo::setParent(Nodo* newParent){
+    parent = newParent;
+}
 
-        void setRight(Nodo* newRight){
-            right = newRight;
-        }
-
-        void setLeft(Nodo* newLeft){
-            left = newLeft;
-        }
-
-        void setParent(Nodo* newParent){
-            parent = newParent;
-        }
-
-        void setColor(int newColor){
-            color = newColor;
-        }
-};
+void Nodo::setColor(int newColor){
+    color = newColor;
+}
