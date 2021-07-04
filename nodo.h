@@ -21,10 +21,25 @@ class Nodo
 
       bool nilNode;
    public:
-      //Nodo constructor for nilNode
+      /**
+       * @brief Nodo constructor for nilNode
+       * 
+       */
       Nodo();
 
-      //Nodo constructor for real RBTree Node
+      /**
+       * @brief Nodo constructor for create single value Node. minValue and maxValue will have the same value
+       * 
+       * @param value
+       */
+      Nodo(int value);
+
+      /**
+       * @brief Nodo constructor for real RBTree Node
+       * 
+       * @param minValue 
+       * @param maxValue 
+       */
       Nodo(int minValue, int maxValue);
 
       /**
