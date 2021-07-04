@@ -2,7 +2,18 @@
 #include <stdlib.h>
 #include "nodo.h"
 
-//Nodo constructor for real RBTree Node
+Nodo::Nodo(int value){
+    this->valueMin = value;
+    this->valueMax = value;
+
+    right = new Nodo();
+    left = new Nodo();
+    parent = new Nodo();
+
+    color = RED;
+    nilNode = false;
+}
+
 Nodo::Nodo(int valueMin, int valueMax){
     this->valueMin = valueMin;
     this->valueMax = valueMax;
@@ -15,7 +26,6 @@ Nodo::Nodo(int valueMin, int valueMax){
     nilNode = false;
 }
 
-//Nodo constructor for nilNode
 Nodo::Nodo(){
     right = this;
     left = this;
@@ -26,13 +36,6 @@ Nodo::Nodo(){
     nilNode = true;
 }
 
-/**
- * @brief 
- * 
- * @param value 
- * @return true
- * if value overlap the interval defined by valueMin and valueMax
- */
 bool Nodo::checkOverlap(int value){
     if(value >= valueMin && value <= valueMax)
         return true;
@@ -40,14 +43,6 @@ bool Nodo::checkOverlap(int value){
         return false;
 }
 
-/**
- * @brief 
- * 
- * @param x 
- * @param y
- * 
- * Methods that swap x and y values 
- */
 void Nodo::swapValues(Nodo* x, Nodo* y){
     int minApp = y->valueMin;
     int maxApp = y->valueMax;
