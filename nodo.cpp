@@ -19,6 +19,7 @@ class Nodo{
         bool nilNode;
     
     public:
+        //Nodo constructor for real RBTree Node
         Nodo(int valueMin, int valueMax){
             this->valueMin = valueMin;
             this->valueMax = valueMax;
@@ -31,6 +32,7 @@ class Nodo{
             nilNode = false;
         }
 
+        //Nodo constructor for nilNode
         Nodo(){
             right = this;
             left = this;
