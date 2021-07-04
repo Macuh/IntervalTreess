@@ -1,6 +1,6 @@
 #include <iostream>
 #include <stdlib.h>
-#include <nodo.h>
+#include "nodo.h"
 
 //Nodo constructor for real RBTree Node
 Nodo::Nodo(int valueMin, int valueMax){
