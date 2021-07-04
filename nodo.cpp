@@ -1,3 +1,10 @@
+#include <iostream>
+#include <stdlib.h>
+
+#define RED 0
+#define BLACK 1
+#define DOUBLE_BLACK 2
+
 class Nodo{
     private:
         int valueMin;
@@ -12,6 +19,17 @@ class Nodo{
         bool nilNode;
     
     public:
+        Nodo(int valueMin, int valueMax){
+            this->valueMin = valueMin;
+            this->valueMax = valueMax;
+
+            right = NULL;
+            left = NULL;
+            parent = NULL;
+
+            color = RED;
+            nilNode = false;
+        }
 
         /**
          * @brief 
