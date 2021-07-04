@@ -27,6 +27,25 @@ class Nodo{
                 return false;
         }
 
+        /**
+         * @brief 
+         * 
+         * @param x 
+         * @param y
+         * 
+         * Methods that swap x and y values 
+         */
+        static void swapValues(Nodo* x, Nodo* y){
+            int minApp = y->valueMin;
+            int maxApp = y->valueMax;
+
+            y->valueMin = x->valueMin;
+            y->valueMax = x->valueMax;
+
+            x->valueMin = minApp;
+            x->valueMax = maxApp;
+        }
+
         //Getter
 
         int getValueMin(){
