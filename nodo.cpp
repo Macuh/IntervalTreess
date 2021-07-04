@@ -12,6 +12,21 @@ class Nodo{
         bool nilNode;
     
     public:
+
+        /**
+         * @brief 
+         * 
+         * @param value 
+         * @return true
+         * if value overlap the interval defined by valueMin and valueMax
+         */
+        bool checkOverlap(int value){
+            if(value >= valueMin && value <= valueMax)
+                return true;
+            else 
+                return false;
+        }
+
         //Getter
 
         int getValueMin(){
