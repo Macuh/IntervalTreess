@@ -10,7 +10,14 @@ class RedBlackTree{
     Nodo* root;
 
     public:
+        /**
+         * @brief Construct a new Red Black Tree object. Set root with a new nilNode 
+         */
         RedBlackTree();
+
+        /**
+         * @brief Get the Root object
+         */
         Nodo* getRoot();
 
         /**
@@ -43,8 +50,8 @@ class RedBlackTree{
          * check if nodo is a left or right parent child
          * @param nodo
          * @return 0 if nodo is a left child
-         * @return 1 if nodo is a right child
-         * @return -1 if nodo doesn't have a parent 
+         * \n 1 if nodo is a right child
+         * \n -1 if nodo doesn't have a parent 
          */
         int checkParentChild(Nodo* nodo);
 
@@ -79,7 +86,7 @@ class RedBlackTree{
          * 
          * @param value 
          */
-        void inserisci(int value);
+        void insert(int value);
 
         /**
          * @brief Starting by a node fix the tree to respect RBTree properties
