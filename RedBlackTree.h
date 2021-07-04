@@ -69,7 +69,7 @@ class RedBlackTree{
          * 
          * @param value 
          * @return Nodo* if there is an object that have value equals to input value
-         * @return NULL if there isn't an object that have value equals to input value
+         * \n nilNode if there isn't an object that have value equals to input value
          */
         Nodo* ricerca(int value);
 

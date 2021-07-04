@@ -81,7 +81,18 @@ Nodo* getSuccessor(Nodo* nodo){
     return app;
 }
 
-//Manca la ricerca
+Nodo* RedBlackTree::ricerca(int value){
+    Nodo* app = root;
+
+    while(!app->checkNil()){
+        if(app->getValueMin() == value) return app;
+
+        if(app->getValueMin() > value) app = app->getLeft();
+        else app = app->getRight();
+    }
+
+    return app;
+}
 
 void RedBlackTree::preOrder(Nodo* nodoAttuale){
     if(!(nodoAttuale->getLeft()->checkNil())) preOrder(nodoAttuale->getLeft());
