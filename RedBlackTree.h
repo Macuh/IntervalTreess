@@ -60,7 +60,7 @@ class RedBlackTree{
          * 
          * @param nodo 
          * @return Successor object if nodo have a successor
-         * @return nilNode if nodo doesn't have a successor
+         * \n nilNode if nodo doesn't have a successor
          */
         Nodo* getSuccessor(Nodo* nodo);
 
