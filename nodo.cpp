@@ -23,12 +23,22 @@ class Nodo{
             this->valueMin = valueMin;
             this->valueMax = valueMax;
 
-            right = NULL;
-            left = NULL;
-            parent = NULL;
+            right = new Nodo();
+            left = new Nodo();
+            parent = new Nodo();
 
             color = RED;
             nilNode = false;
+        }
+
+        Nodo(){
+            right = this;
+            left = this;
+            parent = this;
+            
+            color = BLACK;
+
+            nilNode = true;
         }
 
         /**
