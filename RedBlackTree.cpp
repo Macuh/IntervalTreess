@@ -16,9 +16,9 @@ void RedBlackTree::leftRotate(Nodo* x){
         root = nodo;
  
     if(!(x->getParent()->checkNil()) && checkParentChild(x) == 1)
-        x->getParent()->setLeft(nodo);
-    if(!(x->getParent()->checkNil()) && checkParentChild(nodo) == 0)
         x->getParent()->setRight(nodo);
+    if(!(x->getParent()->checkNil()) && checkParentChild(x) == 0)
+        x->getParent()->setLeft(nodo);
 
     nodo->setParent(x->getParent());
     x->setParent(nodo);
@@ -36,9 +36,9 @@ void RedBlackTree::rightRotate(Nodo* x){
         root = nodo;
  
     if(!(x->getParent()->checkNil()) && checkParentChild(x) == 1)
-        x->getParent()->setLeft(nodo);
-    if(!(x->getParent()->checkNil()) && checkParentChild(nodo) == 0)
         x->getParent()->setRight(nodo);
+    if(!(x->getParent()->checkNil()) && checkParentChild(x) == 0)
+        x->getParent()->setLeft(nodo);
 
     nodo->setParent(x->getParent());
     x->setParent(nodo);
