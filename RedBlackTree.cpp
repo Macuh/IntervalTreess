@@ -94,10 +94,10 @@ Nodo* RedBlackTree::ricerca(int value){
     return app;
 }
 
-void RedBlackTree::preOrder(Nodo* nodoAttuale){
-    if(!(nodoAttuale->getLeft()->checkNil())) preOrder(nodoAttuale->getLeft());
+void RedBlackTree::inOrder(Nodo* nodoAttuale){
+    if(!(nodoAttuale->getLeft()->checkNil())) inOrder(nodoAttuale->getLeft());
     cout << nodoAttuale->getValueMin() << " " << nodoAttuale << " " << nodoAttuale->getLeft() << " " << nodoAttuale->getRight() << " " << nodoAttuale->getColor() << endl;
-    if(!(nodoAttuale->getRight()->checkNil())) preOrder(nodoAttuale->getRight());
+    if(!(nodoAttuale->getRight()->checkNil())) inOrder(nodoAttuale->getRight());
 }
 
 void RedBlackTree::insert(Nodo* newNodo){

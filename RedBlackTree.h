@@ -78,7 +78,7 @@ class RedBlackTree{
          * 
          * @param nodoAttuale is the start node
          */
-        void preOrder(Nodo* nodoAttuale);
+        void inOrder(Nodo* nodoAttuale);
 
         /**
          * @brief Insert a node in RBTree. The new nodes have ever red color. 
