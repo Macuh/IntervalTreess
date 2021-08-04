@@ -6,6 +6,8 @@ Nodo::Nodo(int value){
     this->valueMin = value;
     this->valueMax = value;
 
+    this->maxValueInSub = 0;
+
     right = new Nodo();
     left = new Nodo();
     parent = new Nodo();
@@ -17,6 +19,8 @@ Nodo::Nodo(int value){
 Nodo::Nodo(int valueMin, int valueMax){
     this->valueMin = valueMin;
     this->valueMax = valueMax;
+
+    this->maxValueInSub = valueMax;
 
     right = new Nodo();
     left = new Nodo();
@@ -64,6 +68,10 @@ int Nodo::getValueMax(){
     return valueMax;
 }
 
+int Nodo::getMaxValueInSub(){
+    return maxValueInSub;
+}
+
 Nodo* Nodo::getRight(){
     return right;
 }
@@ -92,6 +100,10 @@ void Nodo::setValueMin(int newValue){
 
 void Nodo::setValueMax(int newValue){
     valueMax = newValue;
+}
+
+void Nodo::setMaxValueInSub(int newValue){
+    maxValueInSub = newValue;
 }
 
 void Nodo::setRight(Nodo* newRight){

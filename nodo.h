@@ -13,6 +13,8 @@ class Nodo
       int valueMin;
       int valueMax;
 
+      int maxValueInSub;
+
       Nodo* right;
       Nodo* left;
       Nodo* parent;
@@ -64,6 +66,7 @@ class Nodo
       //Getter
       int getValueMin();
       int getValueMax();
+      int getMaxValueInSub();
       Nodo* getRight();
       Nodo* getLeft();
       Nodo* getParent();
@@ -73,6 +76,7 @@ class Nodo
       //Setter
       void setValueMin(int newValue);
       void setValueMax(int newValue);
+      void setMaxValueInSub(int newValue);
       void setRight(Nodo* newRight);
       void setLeft(Nodo* newLeft);
       void setParent(Nodo* newParent);
