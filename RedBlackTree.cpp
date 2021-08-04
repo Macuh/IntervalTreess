@@ -96,7 +96,15 @@ Nodo* RedBlackTree::ricerca(int value){
 
 void RedBlackTree::inOrder(Nodo* nodoAttuale){
     if(!(nodoAttuale->getLeft()->checkNil())) inOrder(nodoAttuale->getLeft());
-    cout << nodoAttuale->getValueMin() << " " << nodoAttuale << " " << nodoAttuale->getLeft() << " " << nodoAttuale->getRight() << " " << nodoAttuale->getColor() << endl;
+    
+    cout << nodoAttuale->getValueMin() <<
+            " " << nodoAttuale->getValueMax() << 
+            " | " << nodoAttuale->getLeft()->getValueMin() <<
+            " " << nodoAttuale->getLeft() ->getValueMax() <<
+            " | " << nodoAttuale->getRight()->getValueMin() <<
+            " " << nodoAttuale->getRight()->getValueMax() << 
+            " | " << nodoAttuale->getColor() << endl;
+    
     if(!(nodoAttuale->getRight()->checkNil())) inOrder(nodoAttuale->getRight());
 }
 
