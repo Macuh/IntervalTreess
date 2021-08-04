@@ -37,3 +37,8 @@ void IntervalTree::insert(Nodo* newNodo){
     this->RedBlackTree::insert(newNodo);
     updateMaxSubtree(this->getRoot());
 }
+
+void IntervalTree::elimina(Nodo* nodo){
+    this->RedBlackTree::elimina(nodo);
+    updateMaxSubtree(this->getRoot());
+}

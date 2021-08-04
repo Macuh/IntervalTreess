@@ -8,5 +8,6 @@ class IntervalTree : public RedBlackTree{
         
         Nodo* ricerca(int value);
         void insert(Nodo* newNodo);
+        void elimina(Nodo* nodo);
         int updateMaxSubtree(Nodo* newNodo);
 };
