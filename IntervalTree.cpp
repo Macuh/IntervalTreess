@@ -12,3 +12,12 @@ Nodo* IntervalTree::ricerca(int value){
 
     return app;
 }
+
+int IntervalTree::updateMaxSubtree(Nodo* nodoAttuale){
+
+}
+
+void IntervalTree::intervalInsert(Nodo* newNodo){
+    this->insert(newNodo);
+    updateMaxSubtree(this->getRoot());
+}
