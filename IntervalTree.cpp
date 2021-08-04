@@ -33,7 +33,7 @@ int IntervalTree::updateMaxSubtree(Nodo* nodoAttuale){
     return nodoAttuale->getMaxValueInSub();
 }
 
-void IntervalTree::intervalInsert(Nodo* newNodo){
-    this->insert(newNodo);
+void IntervalTree::insert(Nodo* newNodo){
+    this->RedBlackTree::insert(newNodo);
     updateMaxSubtree(this->getRoot());
 }
