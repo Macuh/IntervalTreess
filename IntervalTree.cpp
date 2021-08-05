@@ -1,10 +1,10 @@
 #include "IntervalTree.h"
 
-Nodo* IntervalTree::ricerca(int value){
+Nodo* IntervalTree::ricerca(int valueMin, int valueMax){
     Nodo* app = getRoot();
 
-    while(!(app->checkNil()) && !(app->checkOverlap(value))){
-        if(!(app->getLeft()->checkNil()) && app->getLeft()->getMaxValueInSub() >= value)
+    while(!(app->checkNil()) && !(app->checkOverlap(valueMin, valueMax))){
+        if(!(app->getLeft()->checkNil()) && app->getLeft()->getMaxValueInSub() >= valueMin)
             app = app->getLeft();
         else 
             app = app->getRight();

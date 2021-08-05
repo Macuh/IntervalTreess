@@ -6,12 +6,12 @@ class IntervalTree : public RedBlackTree{
 
         }
         /**
-         * @brief Search a interval that overlap the param value
+         * @brief Search a interval that overlap the interval defined by valueMin and valueMax params
          * 
          * @param value 
-         * @return Nodo* if exists a interval that overlap value, otherwise return a nilNode
+         * @return Nodo* if exists a interval that overlap interval defined by valueMin and valueMax params, otherwise return a nilNode
          */
-        Nodo* ricerca(int value);
+        Nodo* ricerca(int valueMin, int valueMax);
 
         /**
          * @brief Call the RedBlackTree::insert method but, after that, update the maxSubtree values of the nodes
