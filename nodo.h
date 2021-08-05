@@ -49,9 +49,9 @@ class Nodo
          * 
          * @param value 
          * @return true
-         * if value overlap the interval defined by valueMin and valueMax
+         * if interval defined by valueMin and valueMax params overlap the interval defined by valueMin and valueMax
          */
-      bool checkOverlap(int value);
+      bool checkOverlap(int valueMin, int valueMax);
 
       /**
          * @brief 

@@ -40,10 +40,10 @@ Nodo::Nodo(){
     nilNode = true;
 }
 
-bool Nodo::checkOverlap(int value){
-    if(value >= valueMin && value <= valueMax)
+bool Nodo::checkOverlap(int valueMin, int valueMax){
+    if(valueMax >= this->getValueMin() && valueMin <= this->getValueMax())
         return true;
-    else 
+    else  
         return false;
 }
 
